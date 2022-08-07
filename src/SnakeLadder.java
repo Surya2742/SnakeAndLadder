@@ -12,20 +12,24 @@ public class SnakeLadder {
             if (playerAction == ladder) {
                 System.out.println("Option: Ladder");
                 playerCurrentPosition += dice;
-                System.out.println("Ladder moves the player forward at " + playerCurrentPosition + "\n");
+                if(playerCurrentPosition > 100) {
+                    System.out.println("Player cannot go above 100");
+                    playerCurrentPosition -= dice;
+                }
+                System.out.println("Ladder moves the player at " + playerCurrentPosition + "\n");
             }
             else if (playerAction == snake) {
                 System.out.println("Option: Snake");
                 playerCurrentPosition -= dice;
-                if(playerCurrentPosition < 0)
-                {
+                if(playerCurrentPosition < 0) {
+                    System.out.println("Player cannot go below 0");
                     playerCurrentPosition = 0;
                 }
-                System.out.println("Snake moves the player backward at " + playerCurrentPosition + "\n");
+                System.out.println("Snake moves the player at " + playerCurrentPosition + "\n");
             }
             else if (playerAction == noPlay) {
                 System.out.println("Option: No Play");
-                System.out.println("Player is on " + playerCurrentPosition + "\n");
+                System.out.println("Player stays on " + playerCurrentPosition + "\n");
             }
         }
     }
