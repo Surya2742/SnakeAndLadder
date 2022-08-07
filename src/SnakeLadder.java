@@ -4,8 +4,10 @@ public class SnakeLadder {
         final int noPlay = 0;
         final int ladder = 1;
         final int snake = 2;
+        int dieCounter = 0;
         System.out.println("Game starts and Player is at Position : " + playerCurrentPosition + "\n");
         while(playerCurrentPosition < 100) {
+            dieCounter++;
             int dice = (int) Math.floor(Math.random() * 6 + 1);
             System.out.println("The Number on dice is " + dice);
             int playerAction = (int) (Math.random() * 3);
@@ -32,5 +34,6 @@ public class SnakeLadder {
                 System.out.println("Player stays on " + playerCurrentPosition + "\n");
             }
         }
+        System.out.println("Die has been rolled for " + dieCounter + " times.");
     }
 }
